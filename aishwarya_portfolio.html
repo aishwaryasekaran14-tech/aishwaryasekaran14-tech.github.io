@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aishwarya Chandrasekaran — Composites Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a18;
+    --ink-mid: #4a4a46;
+    --ink-light: #9a9992;
+    --cream: #f8f5ef;
+    --cream-mid: #ede9e0;
+    --cream-deep: #e0dbd0;
+    --copper: #b5621e;
+    --copper-light: #d4824a;
+    --copper-pale: #f5ece3;
+    --teal: #1d6e5e;
+    --teal-pale: #e1f0eb;
+    --line: rgba(26,26,24,0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAVIGATION ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(248,245,239,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    padding: 0 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--copper); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 80px 6rem 6rem;
+    gap: 4rem;
+    background: var(--cream);
+    position: relative;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 45%;
+    height: 100%;
+    background: var(--cream-mid);
+    z-index: 0;
+  }
+  .hero-content { position: relative; z-index: 1; }
+  .hero-tag {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--copper);
+    border: 1px solid var(--copper-light);
+    padding: 5px 14px;
+    border-radius: 2px;
+    margin-bottom: 2rem;
+    background: var(--copper-pale);
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.3rem;
+    color: var(--ink);
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--copper);
+  }
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink-mid);
+    margin-bottom: 2rem;
+    line-height: 1.4;
+  }
+  .hero-desc {
+    font-size: 15px;
+    color: var(--ink-mid);
+    max-width: 460px;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 12px 28px;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--copper); }
+  .btn-outline {
+    border: 1px solid var(--ink-mid);
+    color: var(--ink);
+    padding: 12px 28px;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--copper); color: var(--copper); }
+
+  .hero-visual { position: relative; z-index: 1; }
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .stat-block {
+    background: var(--cream-mid);
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+  .stat-block:nth-child(1) { background: var(--ink); }
+  .stat-block:nth-child(1) .stat-n { color: var(--cream); }
+  .stat-block:nth-child(1) .stat-l { color: rgba(248,245,239,0.5); }
+  .stat-n {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--copper);
+    line-height: 1;
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+  .stat-l {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+  }
+  .hero-visa {
+    margin-top: 1.5rem;
+    background: var(--teal-pale);
+    border: 1px solid rgba(29,110,94,0.2);
+    border-radius: 4px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .visa-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--teal);
+    flex-shrink: 0;
+  }
+  .hero-visa p {
+    font-size: 13px;
+    color: var(--teal);
+    font-weight: 500;
+  }
+  .hero-visa span { font-weight: 400; color: #2d7a6a; }
+
+  /* ── SECTIONS ── */
+  section { padding: 6rem 6rem; }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+  .section-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--copper);
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 300;
+    color: var(--ink);
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+    max-width: 200px;
+  }
+
+  /* ── ABOUT ── */
+  #about { background: white; }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .about-text p {
+    font-size: 16px;
+    line-height: 1.9;
+    color: var(--ink-mid);
+    margin-bottom: 1.25rem;
+  }
+  .about-text .lead {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+  .contact-card {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+  .contact-card h3 {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 1rem;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+    color: var(--ink-mid);
+    text-decoration: none;
+  }
+  .contact-item:last-child { border-bottom: none; }
+  .contact-item:hover { color: var(--copper); }
+  .contact-icon {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--cream-mid);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+  .languages {
+    margin-top: 2rem;
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 2rem;
+  }
+  .languages h3 {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 1.25rem;
+  }
+  .lang-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 0;
+    font-size: 14px;
+    border-bottom: 1px solid var(--line);
+  }
+  .lang-item:last-child { border-bottom: none; }
+  .lang-badge {
+    font-size: 11px;
+    padding: 2px 10px;
+    border-radius: 2px;
+    background: var(--cream-mid);
+    color: var(--ink-mid);
+  }
+
+  /* ── EXPERIENCE ── */
+  #experience { background: var(--cream); }
+  .timeline { position: relative; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 12px; top: 8px; bottom: 0;
+    width: 1px;
+    background: var(--line);
+  }
+  .timeline-item {
+    position: relative;
+    padding-left: 3.5rem;
+    margin-bottom: 3.5rem;
+  }
+  .timeline-dot {
+    position: absolute;
+    left: 0; top: 10px;
+    width: 25px; height: 25px;
+    border-radius: 50%;
+    background: var(--cream);
+    border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .timeline-dot.active {
+    background: var(--copper);
+    border-color: var(--copper);
+  }
+  .timeline-dot.active::after {
+    content: '';
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: white;
+  }
+  .timeline-dot::after {
+    content: '';
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--ink-light);
+  }
+  .exp-card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 2rem;
+    transition: border-color 0.2s;
+  }
+  .exp-card:hover { border-color: var(--copper-light); }
+  .exp-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .exp-role {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .exp-date {
+    font-size: 12px;
+    color: var(--copper);
+    background: var(--copper-pale);
+    padding: 3px 12px;
+    border-radius: 2px;
+    border: 1px solid rgba(181,98,30,0.2);
+    white-space: nowrap;
+  }
+  .exp-company {
+    font-size: 13px;
+    color: var(--ink-light);
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+  }
+  .exp-bullets { list-style: none; }
+  .exp-bullets li {
+    position: relative;
+    padding-left: 1rem;
+    font-size: 14px;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+  .exp-bullets li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--copper-light);
+  }
+  .highlight-box {
+    background: var(--teal-pale);
+    border: 1px solid rgba(29,110,94,0.2);
+    border-radius: 3px;
+    padding: 0.75rem 1rem;
+    margin-top: 1rem;
+    font-size: 13px;
+    color: var(--teal);
+    font-style: italic;
+  }
+
+  /* ── SKILLS ── */
+  #skills { background: white; }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .skill-group {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 2rem;
+    background: var(--cream);
+  }
+  .skill-group h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .skill-tag {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 2px;
+    background: var(--cream-mid);
+    color: var(--ink-mid);
+    border: 1px solid var(--line);
+  }
+  .skill-tag.highlight {
+    background: var(--copper-pale);
+    color: var(--copper);
+    border-color: rgba(181,98,30,0.25);
+  }
+
+  /* ── PROJECTS ── */
+  #projects { background: var(--cream); }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .project-card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 2rem;
+    transition: all 0.2s;
+  }
+  .project-card:hover { border-color: var(--copper-light); transform: translateY(-2px); }
+  .project-card.featured {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  .project-tag {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+    display: inline-block;
+  }
+  .tag-industry { background: var(--copper-pale); color: var(--copper); border: 1px solid rgba(181,98,30,0.2); }
+  .tag-academic { background: var(--teal-pale); color: var(--teal); border: 1px solid rgba(29,110,94,0.2); }
+  .project-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+  .project-period {
+    font-size: 12px;
+    color: var(--ink-light);
+    margin-bottom: 1rem;
+  }
+  .project-desc {
+    font-size: 14px;
+    color: var(--ink-mid);
+    line-height: 1.75;
+  }
+  .project-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-left: 2rem;
+    border-left: 1px solid var(--line);
+  }
+  .metric {
+    text-align: center;
+    padding: 1.25rem;
+    background: var(--cream);
+    border-radius: 3px;
+    border: 1px solid var(--line);
+  }
+  .metric-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--copper);
+    display: block;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+  .metric-label {
+    font-size: 11px;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ── EDUCATION ── */
+  #education { background: white; }
+  .edu-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
+  .edu-card {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 2rem;
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+  .edu-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--copper);
+  }
+  .edu-year {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 0.5rem;
+  }
+  .edu-degree {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+  }
+  .edu-school {
+    font-size: 13px;
+    color: var(--copper);
+    font-weight: 500;
+  }
+  .edu-location {
+    font-size: 12px;
+    color: var(--ink-light);
+    margin-top: 0.25rem;
+  }
+
+  /* ── CERTIFICATIONS ── */
+  #certifications { background: var(--cream); }
+  .cert-list { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+  .cert-card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .cert-badge {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--copper-pale);
+    border: 1px solid rgba(181,98,30,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    margin-bottom: 0.5rem;
+  }
+  .cert-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .cert-issuer { font-size: 12px; color: var(--ink-light); }
+  .cert-date { font-size: 12px; color: var(--copper); font-weight: 500; }
+
+  /* ── RECOMMENDATION ── */
+  #recommendation { background: var(--ink); padding: 6rem; }
+  .rec-inner { max-width: 780px; margin: 0 auto; text-align: center; }
+  .rec-inner .section-title { color: var(--cream); }
+  .rec-inner .section-num { color: var(--copper-light); }
+  .rec-inner .section-line { background: rgba(248,245,239,0.15); }
+  .rec-inner .section-header { justify-content: center; }
+  .rec-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(248,245,239,0.85);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    position: relative;
+  }
+  .rec-quote::before {
+    content: '\201C';
+    font-size: 6rem;
+    color: var(--copper);
+    opacity: 0.3;
+    position: absolute;
+    top: -1.5rem;
+    left: -2.5rem;
+    font-style: normal;
+    line-height: 1;
+  }
+  .rec-author { font-size: 14px; color: rgba(248,245,239,0.5); }
+  .rec-author strong { color: rgba(248,245,239,0.8); font-weight: 500; }
+  .rec-divider {
+    width: 40px; height: 1px;
+    background: var(--copper);
+    margin: 1.5rem auto;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 3rem 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--cream);
+    letter-spacing: 0.04em;
+  }
+  .footer-links { display: flex; gap: 2rem; list-style: none; }
+  .footer-links a {
+    font-size: 12px;
+    color: rgba(248,245,239,0.4);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--copper-light); }
+  .footer-copy {
+    font-size: 12px;
+    color: rgba(248,245,239,0.25);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; padding: 90px 2rem 4rem; }
+    .hero::after { display: none; }
+    section { padding: 4rem 2rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .project-card.featured { grid-column: 1; grid-template-columns: 1fr; }
+    .project-metrics { padding-left: 0; border-left: none; border-top: 1px solid var(--line); padding-top: 1.5rem; flex-direction: row; }
+    .edu-grid { grid-template-columns: 1fr; }
+    .cert-list { grid-template-columns: 1fr 1fr; }
+    footer { padding: 2rem; flex-direction: column; text-align: center; }
+    #recommendation { padding: 4rem 2rem; }
+    .rec-quote { font-size: 1.3rem; }
+    .rec-quote::before { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#hero">Aishwarya C.</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <div class="hero-tag">Available for opportunities</div>
+    <h1>Aishwarya<br><em>Chandrasekaran</em></h1>
+    <p class="hero-subtitle">Composites Process &amp; Materials Engineer</p>
+    <p class="hero-desc">3+ years of R&amp;D experience bridging material science, process optimization, and industrial engineering for wind energy composites. Specialist in epoxy carbon fiber systems, pultrusion, and vacuum infusion.</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="#experience">View Experience</a>
+      <a class="btn-outline" href="mailto:aishwaryasekaran14@gmail.com">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-stats">
+      <div class="stat-block">
+        <span class="stat-n">3+</span>
+        <span class="stat-l">Years R&amp;D</span>
+      </div>
+      <div class="stat-block">
+        <span class="stat-n">97%</span>
+        <span class="stat-l">Yield Achieved</span>
+      </div>
+      <div class="stat-block">
+        <span class="stat-n">₹10Cr</span>
+        <span class="stat-l">Savings Delivered</span>
+      </div>
+      <div class="stat-block">
+        <span class="stat-n">3+</span>
+        <span class="stat-l">Global Customers</span>
+      </div>
+    </div>
+    <div class="hero-visa">
+      <div class="visa-dot"></div>
+      <p>Holds an active <strong>French Alumni Visa</strong> — <span>eligible for European opportunities</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2 class="section-title">About</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p class="lead">"I am meticulous in my approach to work, ensuring that every aspect of a task is given the attention it deserves."</p>
+      <p>I am a Composites Process &amp; Materials Engineer with hands-on R&amp;D experience in epoxy and vinyl ester systems for carbon and glass fiber applications. My work at Gurit Wind spans the full development lifecycle — from resin formulation and trial design to industrialization and supplier qualification.</p>
+      <p>I thrive in cross-functional environments, having collaborated with engineering teams across India, Denmark, China, and the UK. My master's degree from École Centrale de Nantes (France) provides strong European academic grounding that I continuously apply to industrial challenges.</p>
+      <p>I am deeply passionate about the composite processing and modeling field, combining serenity under pressure with relentless ownership of quality outcomes.</p>
+    </div>
+    <div>
+      <div class="contact-card" id="contact">
+        <h3>Contact &amp; Links</h3>
+        <a class="contact-item" href="tel:+919994321485">
+          <div class="contact-icon">📞</div>
+          +91-999-4321-485
+        </a>
+        <a class="contact-item" href="mailto:aishwaryasekaran14@gmail.com">
+          <div class="contact-icon">✉</div>
+          aishwaryasekaran14@gmail.com
+        </a>
+        <a class="contact-item" href="https://linkedin.com" target="_blank">
+          <div class="contact-icon">in</div>
+          LinkedIn Profile
+        </a>
+        <a class="contact-item" href="#">
+          <div class="contact-icon">📍</div>
+          Chennai, India
+        </a>
+      </div>
+      <div class="languages">
+        <h3>Languages</h3>
+        <div class="lang-item">
+          <span>English</span>
+          <span class="lang-badge">Fluent / Advanced</span>
+        </div>
+        <div class="lang-item">
+          <span>French</span>
+          <span class="lang-badge">Functional (A2)</span>
+        </div>
+        <div class="lang-item">
+          <span>Tamil</span>
+          <span class="lang-badge">Native</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Work Experience</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-dot active"></div>
+      <div class="exp-card">
+        <div class="exp-meta">
+          <div>
+            <div class="exp-role">Materials Engineer — Technology &amp; Innovation</div>
+            <div class="exp-company">Gurit Wind Private Limited · Chennai, India</div>
+          </div>
+          <span class="exp-date">Aug 2025 – Current</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Qualifying new composite materials for NPD through mechanical and physical testing (tensile, compression, DSC, DMA, FTIR) and optimizing resin infusion parameters for PET and balsa core structures.</li>
+          <li>Leading Gurit India's GFRP pultrusion supplier qualification programme, evaluating Indian pultruders against technical and quality standards through product characterization and process capability assessments.</li>
+          <li>Leading standalone industrialization of balsa core resin uptake optimization for wind turbine blade sandwich structures, validating mechanical performance against CTQs and preparing compliance documentation.</li>
+        </ul>
+        <div class="highlight-box">Promoted to this role in recognition of proven delivery and growing expertise in aligning material performance with customer-critical requirements.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot active"></div>
+      <div class="exp-card">
+        <div class="exp-meta">
+          <div>
+            <div class="exp-role">Process Engineer — R&amp;D</div>
+            <div class="exp-company">Gurit Wind Private Limited · Chennai, India</div>
+          </div>
+          <span class="exp-date">Jul 2025 – Aug 2025</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Promoted within the R&amp;D division after demonstrated leadership in trial planning, defect elimination, and knowledge transfer on epoxy carbon plank development.</li>
+          <li>Drove tooling modifications and process parameter optimization for productivity and quality improvement.</li>
+          <li>Led process transfer and qualification with Denmark and UK engineering teams.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="exp-card">
+        <div class="exp-meta">
+          <div>
+            <div class="exp-role">Junior Process Engineer — R&amp;D, Structural Profiles</div>
+            <div class="exp-company">Gurit Wind Private Limited · Chennai, India</div>
+          </div>
+          <span class="exp-date">Feb 2024 – Jun 2025</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Authored SOPs, OPLs, and work instructions to standardize composite manufacturing processes.</li>
+          <li>Led RCA and implemented CAPA, improving repeatability and reducing defect rates significantly.</li>
+          <li>Correlated epoxy resin and carbon fiber behavior with mechanical properties through structured material analysis.</li>
+          <li>Supported operator training and shop-floor troubleshooting during industrialization trials.</li>
+          <li>Designed, validated, and industrialized epoxy carbon plank processes through DoE-based trials, achieving 97% yield.</li>
+          <li>Represented the Indian R&amp;D team in two technical visits to Denmark for training, process alignment, and technology transfer.</li>
+        </ul>
+        <div class="highlight-box">Resolved critical surface defects via structured RCA — improving yield from 72% to 97% and delivering ₹10 crore+ in cost savings. Referenced by the global technical team.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="exp-card">
+        <div class="exp-meta">
+          <div>
+            <div class="exp-role">Graduate Engineer Trainee</div>
+            <div class="exp-company">Chennai Polypack Pvt. Ltd. · Chennai, India</div>
+          </div>
+          <span class="exp-date">Jul 2018 – Jun 2019</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Supported raw material selection and procurement for polyethylene-based packaging products.</li>
+          <li>Systematized product structures and recommended design improvements for process efficiency.</li>
+          <li>Developed and maintained a material database for PE, PP, and PET extrusion.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Key Projects</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="projects-grid">
+
+    <div class="project-card featured">
+      <div>
+        <span class="project-tag tag-industry">Industry · Gurit Wind</span>
+        <h3 class="project-title">Epoxy Carbon Plank Optimization for Multiple Global Customers</h3>
+        <p class="project-period">January 2025 – June 2025 · Chennai, India</p>
+        <p class="project-desc">Co-led the full-cycle development of customized epoxy carbon planks tailored to diverse wind energy customer specifications. The project involved iterative trial planning, DoE-driven parameter optimization, defect elimination via 5 Whys and Fishbone RCA, and cross-functional collaboration across Denmark HQ, local production, and procurement teams.</p>
+        <p class="project-desc" style="margin-top: 0.75rem;">Localized Denmark's pilot-developed CFRP process by adapting to Indian environmental and climatic conditions — achieving customer-ready optimization in just 13 trials compared to 70+ overseas. Created actionable SOPs, technical documentation, and knowledge reports for scalable outcomes.</p>
+      </div>
+      <div class="project-metrics">
+        <div class="metric">
+          <span class="metric-num">97%</span>
+          <span class="metric-label">Yield Achieved</span>
+        </div>
+        <div class="metric">
+          <span class="metric-num">13</span>
+          <span class="metric-label">Trials vs 70+ Overseas</span>
+        </div>
+        <div class="metric">
+          <span class="metric-num">₹10Cr+</span>
+          <span class="metric-label">Cost Savings</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-tag tag-academic">Master's Thesis · Centrale Nantes</span>
+      <h3 class="project-title">Design of Welding Rotators for Offshore Wind Monopile Manufacturing</h3>
+      <p class="project-period">March 2023 – August 2023 · Primo Automation Systems Pvt. Ltd.</p>
+      <p class="project-desc">Designed 1000-ton, 2000-ton, and 200-ton welding rotators in SolidWorks 2022 for offshore windtower and monopile manufacturing. Conducted structural analysis, mesh simulations, and investigated E350A vs E250A steel substitution for augmented performance.</p>
+    </div>
+
+    <div class="project-card">
+      <span class="project-tag tag-academic">Academic Project · Centrale Nantes</span>
+      <h3 class="project-title">Wet Compression Molding &amp; Permeability Measurement for Automotive Composites</h3>
+      <p class="project-period">October 2022 – January 2023</p>
+      <p class="project-desc">Developed a saturated textile compression test bench to measure 3D permeability tensors of automotive preforms. Innovated wet compression molding process cutting mass by 20%. Permeability data directly informed RTM and LRI process parameters — correlating in-plane and through-thickness flow resistance with fibre volume fraction.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <h3>Composite Manufacturing</h3>
+      <div class="skill-tags">
+        <span class="skill-tag highlight">Vacuum Infusion</span>
+        <span class="skill-tag highlight">Pultrusion</span>
+        <span class="skill-tag">Resin Infusion (RTM/LRI)</span>
+        <span class="skill-tag">Autoclave Processing</span>
+        <span class="skill-tag">Wet Compression Molding</span>
+        <span class="skill-tag">Sandwich Structures</span>
+        <span class="skill-tag">Composite Layup</span>
+        <span class="skill-tag">Draping</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h3>Materials</h3>
+      <div class="skill-tags">
+        <span class="skill-tag highlight">Epoxy Thermoset Systems</span>
+        <span class="skill-tag highlight">Carbon Fiber Composites</span>
+        <span class="skill-tag">Glass Fiber Reinforced Polymers</span>
+        <span class="skill-tag">Vinyl Ester Systems</span>
+        <span class="skill-tag">PET Core Materials</span>
+        <span class="skill-tag">Balsa Core Structures</span>
+        <span class="skill-tag">Thermoplastic Composites</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h3>Testing &amp; Characterization</h3>
+      <div class="skill-tags">
+        <span class="skill-tag highlight">DSC</span>
+        <span class="skill-tag highlight">DMA</span>
+        <span class="skill-tag highlight">FTIR</span>
+        <span class="skill-tag">Rheometry</span>
+        <span class="skill-tag">Tensile / Compression / Flexural</span>
+        <span class="skill-tag">Fiber Volume Fraction</span>
+        <span class="skill-tag">Microstructural Evaluation</span>
+        <span class="skill-tag">Viscosity Measurement</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h3>Quality &amp; Process Engineering</h3>
+      <div class="skill-tags">
+        <span class="skill-tag highlight">DoE (Design of Experiments)</span>
+        <span class="skill-tag highlight">RCA / CAPA</span>
+        <span class="skill-tag highlight">FMEA</span>
+        <span class="skill-tag">SPC</span>
+        <span class="skill-tag">APQP / PPAP</span>
+        <span class="skill-tag">SOP / OPL Authoring</span>
+        <span class="skill-tag">EN 9100 / ISO 9000</span>
+        <span class="skill-tag">Lean / 5S / Six Sigma</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h3>Software &amp; Simulation</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">SolidWorks</span>
+        <span class="skill-tag">CATIA V5</span>
+        <span class="skill-tag">Abaqus (CAE)</span>
+        <span class="skill-tag">LIMS</span>
+        <span class="skill-tag">Gmsh</span>
+        <span class="skill-tag">Minitab</span>
+        <span class="skill-tag">LaTeX</span>
+        <span class="skill-tag">MS Excel Analytics</span>
+        <span class="skill-tag">iFix (Process Trends)</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h3>Professional Competencies</h3>
+      <div class="skill-tags">
+        <span class="skill-tag highlight">Technical Documentation</span>
+        <span class="skill-tag">Cross-functional International Collaboration</span>
+        <span class="skill-tag">Analytical Problem-Solving</span>
+        <span class="skill-tag">Industrialization</span>
+        <span class="skill-tag">NPI / NPD</span>
+        <span class="skill-tag">Process Validation</span>
+        <span class="skill-tag">Engineering Change Management</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Education</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <div class="edu-year">2021 – 2023</div>
+      <div class="edu-degree">M.Sc. Advanced Composite Engineering &amp; Sciences</div>
+      <div class="edu-school">École Centrale de Nantes</div>
+      <div class="edu-location">Nantes, France</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-year">2019 – 2021</div>
+      <div class="edu-degree">Foundation Master – Mechanics &amp; Environment</div>
+      <div class="edu-school">École Centrale de Nantes</div>
+      <div class="edu-location">Nantes, France</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-year">2014 – 2018</div>
+      <div class="edu-degree">B.E. Aeronautical Engineering</div>
+      <div class="edu-school">Adhiyamaan College of Engineering</div>
+      <div class="edu-location">India</div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-header">
+    <span class="section-num">06</span>
+    <h2 class="section-title">Certifications</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="cert-list">
+    <div class="cert-card">
+      <div class="cert-badge">⚙</div>
+      <div class="cert-name">Design and Analysis of Experiments (DoE)</div>
+      <div class="cert-issuer">Factorial designs, ANOVA, hypothesis testing, Minitab</div>
+      <div class="cert-date">March 2026</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-badge">🏆</div>
+      <div class="cert-name">Six Sigma Tools for APQP4WIND</div>
+      <div class="cert-issuer">Lean Six Sigma Institute (LSSI) · 25-hour programme</div>
+      <div class="cert-date">December 2025</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-badge">📊</div>
+      <div class="cert-name">Project Management</div>
+      <div class="cert-issuer">Gurit LMS Portal · Agile/Waterfall Methodologies</div>
+      <div class="cert-date">December 2025</div>
+    </div>
+  </div>
+</section>
+
+<!-- RECOMMENDATION -->
+<section id="recommendation">
+  <div class="rec-inner">
+    <div class="section-header" style="margin-bottom: 3rem;">
+      <span class="section-num">07</span>
+      <h2 class="section-title">Recommendation</h2>
+      <div class="section-line"></div>
+    </div>
+    <p class="rec-quote">She is among the most capable engineers I have worked with — dedicated, methodical, and commercially impactful. I recommend her without reservation.</p>
+    <div class="rec-divider"></div>
+    <p class="rec-author">
+      <strong>K V Narendhara Kumar</strong><br>
+      Lead Engineer · Gurit Wind Private Limited, Chennai
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-name">Aishwarya Chandrasekaran</span>
+  <ul class="footer-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="mailto:aishwaryasekaran14@gmail.com">Email</a></li>
+  </ul>
+  <span class="footer-copy">Chennai, India · French Alumni Visa Active</span>
+</footer>
+
+</body>
+</html>
